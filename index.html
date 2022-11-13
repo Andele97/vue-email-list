@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AXIOS -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   <!-- VUE -->
   <script src="https://unpkg.com/vue@3"></script>
   <!-- CSS -->
@@ -12,6 +14,16 @@
   <title>Vue Email List</title>
 </head>
 <body>
+
+  <div id="app">
+    <ul v-if="email.length === 10" v-for="(emails, i) of email">
+      <li :key="i">
+        <span>{{i+1}}</span>
+        <span>{{emails}}</span>
+      </li>
+    </ul>
+    <div v-else class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
   
   <script src="js/script.js"></script>
 </body>
